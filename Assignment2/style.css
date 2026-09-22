@@ -1,0 +1,92 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f9; 
+  color: #333333;         
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+
+.profile-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  max-width: 350px;
+  width: 90%;
+  
+  
+  padding: 30px 20px;
+  
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+}
+
+
+.profile-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%; 
+  object-fit: cover;
+  border: 3px solid #2563eb;
+}
+
+.profile-name {
+  font-size: 22px;
+  font-weight: bold;
+  color: #1e293b;
+}
+
+.profile-bio {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #64748b;
+}
+
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px; 
+  margin: 8px 0;
+}
+
+.skill-badge {
+  background-color: #e0e7ff;
+  color: #3730a3;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+
+.btn-contact {
+  display: inline-block;
+  background-color: #2563eb; 
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 10px 24px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+
+.btn-contact:hover {
+  background-color: #1d4ed8;
+}
