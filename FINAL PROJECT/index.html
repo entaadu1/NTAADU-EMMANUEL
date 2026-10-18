@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burger Joint Menu - Customizer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Burger Joint Menu Customizer</h1>
+        <p>Build your ultimate burger and get your live receipt!</p>
+    </header>
+
+    <main class="burger-container">
+        
+        <section class="options-column">
+            <h2>Customize Your Burger</h2>
+            
+            
+            <div class="option-group">
+                <h3>Patty Type</h3>
+                <div class="button-group" id="patty-group">
+                    <button type="button" class="option-btn" data-type="patty" data-name="Beef Patty" data-price="5.00">Beef ($5.00)</button>
+                    <button type="button" class="option-btn" data-type="patty" data-name="Chicken Patty" data-price="4.50">Chicken ($4.50)</button>
+                    <button type="button" class="option-btn" data-type="patty" data-name="Veggie Patty" data-price="4.00">Veggie ($4.00)</button>
+                </div>
+            </div>
+
+        
+            <div class="option-group">
+                <h3>Cheese Selection</h3>
+                <div class="button-group" id="cheese-group">
+                    <button type="button" class="option-btn" data-type="cheese" data-name="Cheddar Cheese" data-price="1.00">Cheddar ($1.00)</button>
+                    <button type="button" class="option-btn" data-type="cheese" data-name="Swiss Cheese" data-price="1.20">Swiss ($1.20)</button>
+                    <button type="button" class="option-btn" data-type="cheese" data-name="No Cheese" data-price="0.00">None ($0.00)</button>
+                </div>
+            </div>
+
+            
+            <div class="option-group">
+                <h3>Sauce Options (Select up to 3)</h3>
+                <div class="button-group" id="sauce-group">
+                    <button type="button" class="option-btn multi-select" data-type="sauce" data-name="Special Burger Sauce" data-price="0.50">Special Sauce ($0.50)</button>
+                    <button type="button" class="option-btn multi-select" data-type="sauce" data-name="Garlic Mayo" data-price="0.50">Garlic Mayo ($0.50)</button>
+                    <button type="button" class="option-btn multi-select" data-type="sauce" data-name="BBQ Sauce" data-price="0.50">BBQ Sauce ($0.50)</button>
+                </div>
+            </div>
+
+            
+            <div class="action-group">
+                <button type="button" id="reset-btn">Reset Burger</button>
+            </div>
+        </section>
+
+        
+        <section class="summary-column">
+            <h2>Order Receipt</h2>
+            <div class="receipt-card" id="printable-receipt">
+                <div class="receipt-header">
+                    <h3>BTC Burger Joint</h3>
+                    <p class="receipt-date" id="receipt-date"></p>
+                </div>
+                <ul id="burger-layers-list">
+                    <li><em>No layers selected yet.</em></li>
+                </ul>
+                <div class="total-container">
+                    <h3>Total Cost: <span id="total-cost">$0.00</span></h3>
+                </div>
+                <div class="receipt-footer">
+                    <p>Thank you for your order!</p>
+                </div>
+            </div>
+            
+            
+            <button type="button" id="print-btn">Print Receipt</button>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,229 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    color: #d9534f;
+    margin-bottom: 5px;
+}
+
+header p {
+    color: #666;
+}
+
+
+.burger-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.options-column, .summary-column {
+    flex: 1;
+    min-width: 300px;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.option-group {
+    margin-bottom: 20px;
+}
+
+.option-group h3 {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+
+.option-btn {
+    flex: 1;
+    padding: 10px 15px;
+    border: 2px solid #ddd;
+    background-color: #fff;
+    color: #333;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.2s ease-in-out;
+}
+
+.option-btn:hover {
+    border-color: #d9534f;
+    background-color: #fff5f5;
+}
+
+.option-btn.selected {
+    background-color: #d9534f;
+    color: white;
+    border-color: #d9534f;
+}
+
+
+#reset-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.2s;
+}
+
+#reset-btn:hover {
+    background-color: #5a6268;
+}
+
+#print-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.2s;
+}
+
+#print-btn:hover {
+    background-color: #218838;
+}
+
+
+.receipt-card {
+    background: #fffdf9;
+    border: 1px dashed #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.receipt-header {
+    text-align: center;
+    margin-bottom: 15px;
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 10px;
+}
+
+.receipt-header h3 {
+    color: #2c3e50;
+    font-size: 1.1rem;
+}
+
+.receipt-date {
+    font-size: 0.8rem;
+    color: #777;
+}
+
+#burger-layers-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#burger-layers-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.95rem;
+}
+
+#burger-layers-list li span.layer-price {
+    font-weight: bold;
+    color: #d9534f;
+}
+
+.total-container {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 2px solid #ddd;
+    text-align: right;
+}
+
+.total-container h3 {
+    font-size: 1.2rem;
+    color: #2c3e50;
+}
+
+#total-cost {
+    color: #d9534f;
+}
+
+.receipt-footer {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #777;
+    margin-top: 15px;
+    border-top: 1px dashed #ccc;
+    padding-top: 8px;
+}
+
+
+@media (max-width: 768px) {
+    .burger-container {
+        flex-direction: column;
+    }
+}
+
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    #printable-receipt, #printable-receipt * {
+        visibility: visible;
+    }
+    #printable-receipt {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        border: none;
+        box-shadow: none;
+    }
+}
