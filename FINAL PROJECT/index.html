@@ -3,80 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Burger Joint Menu - Customizer</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Burger Joint - Customizer</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <header>
-        <h1>Burger Joint Menu Customizer</h1>
-        <p>Build your ultimate burger and get your live receipt!</p>
+        <h1>Burger Joint Customizer</h1>
+        <p>Craft your perfect burger layer by layer!</p>
     </header>
 
-    <main class="burger-container">
+    <div class="burger-container">
         
-        <section class="options-column">
-            <h2>Customize Your Burger</h2>
+        <section class="customization-section">
+            <h2 class="section-title">Build Your Burger</h2>
             
-            
-            <div class="option-group">
-                <h3>Patty Type</h3>
-                <div class="button-group" id="patty-group">
-                    <button type="button" class="option-btn" data-type="patty" data-name="Beef Patty" data-price="5.00">Beef ($5.00)</button>
-                    <button type="button" class="option-btn" data-type="patty" data-name="Chicken Patty" data-price="4.50">Chicken ($4.50)</button>
-                    <button type="button" class="option-btn" data-type="patty" data-name="Veggie Patty" data-price="4.00">Veggie ($4.00)</button>
-                </div>
-            </div>
-
+            <form id="burger-form">
         
-            <div class="option-group">
-                <h3>Cheese Selection</h3>
-                <div class="button-group" id="cheese-group">
-                    <button type="button" class="option-btn" data-type="cheese" data-name="Cheddar Cheese" data-price="1.00">Cheddar ($1.00)</button>
-                    <button type="button" class="option-btn" data-type="cheese" data-name="Swiss Cheese" data-price="1.20">Swiss ($1.20)</button>
-                    <button type="button" class="option-btn" data-type="cheese" data-name="No Cheese" data-price="0.00">None ($0.00)</button>
+                <div class="option-group">
+                    <h3>1. Choose Patty Type</h3>
+                    <div class="radio-options">
+                        <label class="option-label">
+                            <input type="radio" name="patty_type" value="Beef Patty" data-price="5.50">
+                            Beef Patty (+$5.50)
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="patty_type" value="Chicken Patty" data-price="4.75">
+                            Chicken Patty (+$4.75)
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="patty_type" value="Veggie Patty" data-price="4.25">
+                            Veggie Patty (+$4.25)
+                        </label>
+                    </div>
                 </div>
-            </div>
 
-            
-            <div class="option-group">
-                <h3>Sauce Options (Select up to 3)</h3>
-                <div class="button-group" id="sauce-group">
-                    <button type="button" class="option-btn multi-select" data-type="sauce" data-name="Special Burger Sauce" data-price="0.50">Special Sauce ($0.50)</button>
-                    <button type="button" class="option-btn multi-select" data-type="sauce" data-name="Garlic Mayo" data-price="0.50">Garlic Mayo ($0.50)</button>
-                    <button type="button" class="option-btn multi-select" data-type="sauce" data-name="BBQ Sauce" data-price="0.50">BBQ Sauce ($0.50)</button>
+                
+                <div class="option-group">
+                    <h3>2. Choose Cheese</h3>
+                    <div class="radio-options">
+                        <label class="option-label">
+                            <input type="radio" name="cheese_selection" value="Cheddar Cheese" data-price="1.00">
+                            Cheddar (+$1.00)
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="cheese_selection" value="Swiss Cheese" data-price="1.25">
+                            Swiss (+$1.25)
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="cheese_selection" value="No Cheese" data-price="0.00">
+                            No Cheese ($0.00)
+                        </label>
+                    </div>
                 </div>
-            </div>
 
-            
-            <div class="action-group">
-                <button type="button" id="reset-btn">Reset Burger</button>
-            </div>
+               
+                <div class="option-group">
+                    <h3>3. Select Sauces</h3>
+                    <div class="checkbox-options">
+                        <label class="option-label">
+                            <input type="checkbox" name="sauce_options" value="Classic BBQ Sauce" data-price="0.50">
+                            Classic BBQ (+$0.50)
+                        </label>
+                        <label class="option-label">
+                            <input type="checkbox" name="sauce_options" value="Spicy Mayo" data-price="0.50">
+                            Spicy Mayo (+$0.50)
+                        </label>
+                        <label class="option-label">
+                            <input type="checkbox" name="sauce_options" value="House Garlic Sauce" data-price="0.75">
+                            Garlic Sauce (+$0.75)
+                        </label>
+                    </div>
+                </div>
+            </form>
         </section>
 
-        
-        <section class="summary-column">
-            <h2>Order Receipt</h2>
-            <div class="receipt-card" id="printable-receipt">
-                <div class="receipt-header">
-                    <h3>BTC Burger Joint</h3>
-                    <p class="receipt-date" id="receipt-date"></p>
+   
+        <section class="receipt-section">
+            <h2 class="section-title">Order Summary</h2>
+            <div class="receipt-card">
+                <div>
+                    <div class="receipt-header">
+                        <h4>Burger Receipt</h4>
+                        <small>Selected Layers</small>
+                    </div>
+
+                    <ul id="burger-layer-list" class="burger-layer-list">
+                        <li class="empty-receipt-msg">No options selected yet. Start customizing!</li>
+                    </ul>
                 </div>
-                <ul id="burger-layers-list">
-                    <li><em>No layers selected yet.</em></li>
-                </ul>
-                <div class="total-container">
-                    <h3>Total Cost: <span id="total-cost">$0.00</span></h3>
-                </div>
-                <div class="receipt-footer">
-                    <p>Thank you for your order!</p>
+
+                <div>
+                    <div class="receipt-total">
+                        <span>Total Cost:</span>
+                        <span id="burger-total-price">$0.00</span>
+                    </div>
+                    <div class="action-buttons">
+                        <button id="burger-reset-btn" class="reset-button" type="button">Reset</button>
+                        <button id="burger-print-btn" class="print-button" type="button">Print Receipt</button>
+                    </div>
                 </div>
             </div>
-            
-            
-            <button type="button" id="print-btn">Print Receipt</button>
         </section>
-    </main>
+    </div>
 
-    <script src="app.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
